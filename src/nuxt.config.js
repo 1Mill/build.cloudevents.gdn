@@ -4,17 +4,17 @@ export default {
 
 	// Global page headers: https://go.nuxtjs.dev/config-head
 	head: {
-		titleTemplate: '%s - app',
-		title: 'app',
 		htmlAttrs: { lang: 'en' },
+		title: 'build.cloudevents.gdn',
+		titleTemplate: '%s - build.cloudevents.gdn',
+		link: [
+			{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+		],
 		meta: [
 			{ charset: 'utf-8' },
 			{ hid: 'description', name: 'description', content: '' },
 			{ name: 'format-detection', content: 'telephone=no' },
 			{ name: 'viewport', content: 'width=device-width, initial-scale=1' },
-		],
-		link: [
-			{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
 		],
 	},
 
