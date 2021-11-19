@@ -21,17 +21,17 @@ jobs:
             ${{ runner.os }}-node-
       - name: Install dependencies 👨🏻‍💻
         run: npm ci
-        working-directory: ./client
+        working-directory: ./src
 
       - name: Build site 🏗️
         run: npm run generate
-        working-directory: ./client
+        working-directory: ./src
 
       - name: Deploy site 🚀
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ github.token }}
-          publish_dir: ./client/dist
+          publish_dir: ./src/dist
 
 on:
   push:
