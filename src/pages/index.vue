@@ -2,6 +2,11 @@
 import { Cloudevent } from '@1mill/cloudevents'
 
 export default {
+	head: () => ({
+		link: [
+			{ hid: 'canonical', rel: 'canonical', href: 'https://build.cloudevents.gdn' },
+		],
+	}),
 	data: () => ({
 		data: null,
 		source: 'build.cloudevents.gdn',
