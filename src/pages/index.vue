@@ -1,4 +1,5 @@
 <script>
+import VueJsonEditor from 'vue-json-editor'
 import { Cloudevent } from '@1mill/cloudevents'
 
 export default {
@@ -7,6 +8,9 @@ export default {
 			{ hid: 'canonical', rel: 'canonical', href: 'https://build.cloudevents.gdn' },
 		],
 	}),
+	components: {
+		VueJsonEditor,
+	},
 	data: () => ({
 		data: null,
 		source: 'build.cloudevents.gdn',
@@ -37,6 +41,14 @@ export default {
 				<p>Easily build cloudevents to inject into AWS Lambda or your local develompent environment</p>
 			</header>
 
+			<div class="mt-3"/>
+			<vue-json-editor
+			expanded-on-start
+			mode="code"
+			v-model="data"
+			/>
+
+			<div class="mt-3"/>
 			<h2>AWS Lambda Test Console</h2>
 			<pre>{{ cloudevent }}</pre>
 
@@ -46,3 +58,8 @@ export default {
 		</article>
 	</main>
 </template>
+<style>
+.jsoneditor-outer {
+	min-height: 10rem;
+}
+</style>
