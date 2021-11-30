@@ -42,6 +42,10 @@ export default {
 			</header>
 
 			<div class="mt-3"/>
+			<v-text-field v-model="source" label="Source"/>
+			<v-text-field v-model="type" label="Type"/>
+
+			<div class="mt-3"/>
 			<vue-json-editor
 			expanded-on-start
 			mode="code"
