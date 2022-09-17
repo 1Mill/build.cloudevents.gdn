@@ -42,7 +42,7 @@ export default {
 </script>
 <template>
 	<main>
-		<article>
+		<article class="d-flex flex-column" style="gap: 0.75rem;">
 			<header>
 				<h1>Cloudevent Builder</h1>
 				<p>
