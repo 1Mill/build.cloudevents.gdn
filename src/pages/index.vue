@@ -52,25 +52,34 @@ export default {
 				</p>
 			</header>
 
-			<div class="mt-3" />
-			<v-text-field v-model="source" label="Source" />
-			<v-text-field v-model="type" label="Type" />
-			<v-text-field v-model="wschannelid" label="Websockets Channel Id" />
+			<div>
+				<v-text-field v-model="source" label="Source" />
+				<v-text-field v-model="type" label="Type" />
+				<v-text-field
+					v-model="wschannelid"
+					label="Websockets Channel Id"
+				/>
+			</div>
 
-			<div class="mt-3" />
 			<vue-json-editor
 				expanded-on-start
 				mode="code"
 				v-model="data"
 			/>
 
-			<div class="mt-3" />
-			<h2>AWS Lambda Test Console</h2>
-			<pre>{{ cloudevent }}</pre>
+			<section>
+				<header>
+					<h2>AWS Lambda Test Console</h2>
+				</header>
+				<pre>{{ cloudevent }}</pre>
+			</section>
 
-			<div class="mt-3" />
-			<h2>Local Development Console</h2>
-			<div>'{{ JSON.stringify(cloudevent) }}'</div>
+			<section>
+				<header>
+					<h2>Local Development Console</h2>
+				</header>
+				<div>'{{ JSON.stringify(cloudevent) }}'</div>
+			</section>
 		</article>
 	</main>
 </template>
