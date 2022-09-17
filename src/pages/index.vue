@@ -19,6 +19,7 @@ export default {
 		data: null,
 		source: "build.cloudevents.gdn",
 		type: "cmd.placeholder.v0",
+		wschannelid: "my-private-channel-name",
 	}),
 	computed: {
 		cloudevent() {
@@ -28,6 +29,7 @@ export default {
 			const attributes = {
 				source: this.source,
 				type: this.type,
+				wschannelid: this.wschannelid || undefined,
 			};
 			if (this.data)
 				attributes.data = JSON.stringify(this.data);
@@ -53,6 +55,7 @@ export default {
 			<div class="mt-3" />
 			<v-text-field v-model="source" label="Source" />
 			<v-text-field v-model="type" label="Type" />
+			<v-text-field v-model="wschannelid" label="Websockets Channel Id" />
 
 			<div class="mt-3" />
 			<vue-json-editor
