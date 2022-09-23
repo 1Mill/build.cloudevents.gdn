@@ -1,6 +1,6 @@
 <script>
-import VueJsonEditor from "vue-json-editor";
-import { Cloudevent } from "@1mill/cloudevents";
+import VueJsonEditor from "vue-json-editor"
+import { Cloudevent } from "@1mill/cloudevents"
 
 export default {
 	head: () => ({
@@ -17,32 +17,34 @@ export default {
 	},
 	data: () => ({
 		data: null,
+		originactor: "user:admin#id=1234",
 		source: "build.cloudevents.gdn",
 		type: "cmd.placeholder.v0",
 		wschannelid: "my-private-channel-name",
 	}),
 	computed: {
 		cloudevent() {
-			if (!this.source) return "Source is required";
-			if (!this.type) return "Type is required";
+			if (!this.source) return "Source is required"
+			if (!this.type) return "Type is required"
 
 			const attributes = {
+				originactor: this.originactor || undefined,
 				source: this.source,
 				type: this.type,
 				wschannelid: this.wschannelid || undefined,
-			};
+			}
 			if (this.data)
-				attributes.data = JSON.stringify(this.data);
+				attributes.data = JSON.stringify(this.data)
 
-			const cloudevent = new Cloudevent(attributes);
-			return cloudevent;
+			const cloudevent = new Cloudevent(attributes)
+			return cloudevent
 		},
 	},
-};
+}
 </script>
 <template>
 	<main>
-		<article class="d-flex flex-column" style="gap: 0.75rem;">
+		<article class="d-flex flex-column" style="gap: 0.75rem">
 			<header>
 				<h1>Cloudevent Builder</h1>
 				<p>
@@ -59,6 +61,7 @@ export default {
 					v-model="wschannelid"
 					label="Websockets Channel Id"
 				/>
+				<v-text-field v-model="originactor" label="Origin Actor" />
 			</div>
 
 			<vue-json-editor
