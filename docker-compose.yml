@@ -3,7 +3,7 @@ version: '3.8'
 services:
   nuxt:
     command: npm run dev
-    image: node:14-alpine
+    image: node:16-alpine
     environment:
       NODE_ENV: development
       NUXT_HOST: 0.0.0.0
