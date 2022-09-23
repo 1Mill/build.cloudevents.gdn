@@ -24,8 +24,8 @@ export default {
 	}),
 	computed: {
 		cloudevent() {
-			if (!this.source) return "Source is required"
-			if (!this.type) return "Type is required"
+			if (!this.source) { return "Source is required" }
+			if (!this.type) { return "Type is required" }
 
 			const attributes = {
 				originactor: this.originactor || undefined,
@@ -33,8 +33,7 @@ export default {
 				type: this.type,
 				wschannelid: this.wschannelid || undefined,
 			}
-			if (this.data)
-				attributes.data = JSON.stringify(this.data)
+			if (this.data) { attributes.data = JSON.stringify(this.data) }
 
 			const cloudevent = new Cloudevent(attributes)
 			return cloudevent
