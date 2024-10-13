@@ -39,4 +39,5 @@ on:
     branches:
       - main
     paths:
+      - .github/workflows/cicd.yml
       - src/**
