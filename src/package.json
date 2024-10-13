@@ -9,7 +9,7 @@
     "generate": "nuxt generate"
   },
   "dependencies": {
-    "@1mill/cloudevents": "^4.6.3",
+    "@1mill/cloudevents": "^5.1.0",
     "core-js": "^3.38.1",
     "nuxt": "^2.18.1",
     "vue-json-editor": "^1.4.3",

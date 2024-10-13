@@ -17,7 +17,6 @@ export default {
 	},
 	data: () => ({
 		data: null,
-		originactor: "user:admin#id=1234",
 		source: "build.cloudevents.gdn",
 		type: "cmd.placeholder.v0",
 		wschannelid: "my-private-channel-name",
@@ -28,7 +27,6 @@ export default {
 			if (!this.type) { return "Type is required" }
 
 			const attributes = {
-				originactor: this.originactor || undefined,
 				source: this.source,
 				type: this.type,
 				wschannelid: this.wschannelid || undefined,
@@ -56,11 +54,7 @@ export default {
 			<div>
 				<v-text-field v-model="source" label="Source" />
 				<v-text-field v-model="type" label="Type" />
-				<v-text-field
-					v-model="wschannelid"
-					label="Websockets Channel Id"
-				/>
-				<v-text-field v-model="originactor" label="Origin Actor" />
+				<v-text-field v-model="wschannelid" label="Websockets Channel Id" />
 			</div>
 
 			<vue-json-editor
