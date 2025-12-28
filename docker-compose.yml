@@ -1,7 +1,7 @@
 services:
   nuxt:
     command: npm run dev
-    image: node:20-alpine
+    image: node:22-alpine
     environment:
       NODE_ENV: development
       NUXT_HOST: 0.0.0.0
